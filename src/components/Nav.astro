@@ -1,0 +1,67 @@
+---
+const links = [
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#education', label: 'Education' },
+];
+---
+
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-300" id="site-nav">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <a href="#" class="font-mono font-semibold text-lg text-amber-500 hover:text-amber-400 transition-colors tracking-tight">
+      aa<span class="text-slate-700">.</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      {links.map(({ href, label }) => (
+        <a href={href} class="text-sm text-slate-400 hover:text-slate-100 transition-colors font-medium">
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="mailto:alvaroalonsogonzalez96@gmail.com"
+      class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-amber-500 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 px-4 py-1.5 rounded transition-all"
+    >
+      Get in touch
+    </a>
+
+    <button class="md:hidden text-slate-400 hover:text-slate-100 p-2" id="mobile-btn" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 px-6 py-4 bg-[#0a0f1e]">
+    {links.map(({ href, label }) => (
+      <a href={href} class="block py-2.5 text-slate-300 hover:text-white text-sm font-medium">{label}</a>
+    ))}
+    <a href="mailto:alvaroalonsogonzalez96@gmail.com" class="block py-2.5 text-amber-500 text-sm font-medium">Get in touch</a>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById('site-nav') as HTMLElement;
+  const mobileBtn = document.getElementById('mobile-btn') as HTMLElement;
+  const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.style.background = 'rgba(10,15,30,0.92)';
+      nav.style.backdropFilter = 'blur(14px)';
+      nav.style.borderBottom = '1px solid rgba(30,41,59,0.7)';
+    } else {
+      nav.style.background = '';
+      nav.style.backdropFilter = '';
+      nav.style.borderBottom = '';
+    }
+  });
+
+  mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,38 @@
+---
+const degrees = [
+  {
+    title: 'MSc in Telecommunications Engineering',
+    school: 'ETSIT — Universidad Politécnica de Madrid',
+    period: '2019 – Present',
+    note: 'Habilitating master, specialty: Telematics. Thesis on web-based videoconference session recording tools.',
+  },
+  {
+    title: 'BSc in Telecommunications Engineering',
+    school: 'ETSIT — Universidad Politécnica de Madrid',
+    period: '2014 – 2019',
+    note: 'Specialty: Telematics. Thesis on virtual didactic scenarios for SDN/IP network interconnection.',
+  },
+];
+---
+
+<section id="education" class="py-14 border-t border-slate-900 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="mb-10">
+      <p class="font-mono text-amber-500 text-xs tracking-widest uppercase mb-3">Academic background</p>
+      <h2 class="text-4xl font-bold tracking-tight">Education</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {degrees.map(deg => (
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7">
+          <p class="font-mono text-xs text-amber-500/60 mb-3">{deg.period}</p>
+          <h3 class="text-lg font-bold text-slate-100 mb-1">{deg.title}</h3>
+          <p class="text-slate-400 text-sm font-medium mb-4">{deg.school}</p>
+          <p class="text-slate-500 text-sm leading-relaxed">{deg.note}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

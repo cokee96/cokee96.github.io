@@ -1,0 +1,92 @@
+---
+const jobs = [
+  {
+    company: 'INNOCV [Alkemy]',
+    role: 'Cloud & DevOps Engineer',
+    period: 'Jan 2026 – Present',
+    current: true,
+    tags: ['Azure', 'Azure DevOps', 'Kubernetes', 'Terraform', 'IaC', 'CI/CD'],
+    bullets: [
+      'Designing and provisioning cloud infrastructure as code with Terraform on Azure.',
+      'Building and maintaining CI/CD pipelines with Azure DevOps.',
+      'Managing Kubernetes cluster deployments and operations.',
+    ],
+  },
+  {
+    company: 'Capgemini',
+    role: 'DevOps Engineer',
+    period: 'Sep 2024 – Jan 2026',
+    current: false,
+    tags: ['Docker', 'Jenkins', 'Python', 'Shell', 'Apache NiFi'],
+    bullets: [
+      'Automated application deployments with Docker containers.',
+      'Developed and maintained Jenkins CI/CD pipelines.',
+      'Built data ingestion pipelines with Apache NiFi.',
+      'Wrote Python and Shell scripts to automate infrastructure tasks.',
+    ],
+  },
+  {
+    company: 'HPE',
+    role: 'Technical Consultant / DevOps',
+    period: 'Mar 2021 – Sep 2024',
+    current: false,
+    tags: ['Ansible', 'AWX', 'Rundeck', 'Jenkins', 'Linux'],
+    bullets: [
+      'Automated infrastructure provisioning and configuration with Ansible and AWX.',
+      'Managed and supported Linux systems across multiple client environments.',
+      'Scheduled and automated operational tasks using Rundeck.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-14 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="mb-10">
+      <p class="font-mono text-amber-500 text-xs tracking-widest uppercase mb-3">Work history</p>
+      <h2 class="text-4xl font-bold tracking-tight">Experience</h2>
+    </div>
+
+    <div class="relative">
+      {jobs.map((job, i) => (
+        <div class={`relative pl-10 ${i < jobs.length - 1 ? 'pb-14' : 'pb-0'}`}>
+          {i < jobs.length - 1 && (
+            <div class="absolute left-[5px] top-3 bottom-0 w-px bg-slate-800"></div>
+          )}
+          <div class={`absolute left-0 top-1.5 w-3 h-3 rounded-full border-2 ${job.current ? 'bg-amber-500 border-amber-500' : 'bg-transparent border-slate-700'}`}></div>
+
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+            <h3 class="text-xl font-semibold text-slate-100">{job.company}</h3>
+            {job.current && (
+              <span class="font-mono text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full">current</span>
+            )}
+          </div>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-5">
+            <p class="text-slate-400 font-medium">{job.role}</p>
+            <span class="text-slate-700">·</span>
+            <p class="font-mono text-xs text-slate-500">{job.period}</p>
+          </div>
+
+          <ul class="space-y-2 mb-5">
+            {job.bullets.map(bullet => (
+              <li class="text-slate-400 text-sm leading-relaxed flex gap-2">
+                <span class="text-amber-600 shrink-0 mt-0.5">›</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex flex-wrap gap-2">
+            {job.tags.map(tag => (
+              <span class="font-mono text-xs px-2.5 py-1 bg-slate-900 border border-slate-800 text-slate-400 rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
