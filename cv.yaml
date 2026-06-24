@@ -116,6 +116,18 @@ projects:
     badge: "GitOps"
     github: "https://github.com/cokee96/observability-stack"
 
+  - name: "demo-app"
+    tagline: "Instrumented microservice for observability demos"
+    description: >
+      Minimal Node.js HTTP service that exposes Prometheus metrics (/metrics),
+      a health endpoint (/healthz) and simulates realistic latency.
+      Deployed on Kubernetes with a ServiceMonitor so Prometheus scrapes it
+      automatically — used to drive the golden-signals dashboard and alert rules
+      in the observability-stack.
+    tags: [Node.js, Kubernetes, Prometheus, Docker, GitOps, ArgoCD]
+    badge: "Demo"
+    github: "https://github.com/cokee96/demo-app"
+
 education:
   - institution: "Universidad Politécnica de Madrid"
     degree: "MSc Telecommunications Engineering"
