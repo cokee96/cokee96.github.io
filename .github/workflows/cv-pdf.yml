@@ -22,22 +22,28 @@ jobs:
 
       - run: npm run build
 
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Screenshot CV page as PDF
+      - name: Install Playwright
         run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Generate PDF
+        run: |
+          python3 -m http.server 3000 --directory dist &
+          SERVER_PID=$!
+          sleep 2
           node -e "
           const { chromium } = require('playwright');
           (async () => {
             const browser = await chromium.launch();
             const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-            await page.goto('file://' + require('path').resolve('dist/index.html'), { waitUntil: 'networkidle' });
+            await page.goto('http://localhost:3000', { waitUntil: 'networkidle' });
             await page.pdf({ path: 'cv-alvaro-alonso.pdf', format: 'A4', printBackground: true });
             await browser.close();
-            console.log('PDF generated: cv-alvaro-alonso.pdf');
-          })();
+            console.log('PDF generated');
+          })().catch(e => { console.error(e); process.exit(1); });
           "
+          kill \$SERVER_PID
 
       - uses: actions/upload-artifact@v4
         with:
