@@ -1,26 +1,16 @@
 ---
-const projects = [
-  {
-    name: 'FocusFarm',
-    tagline: 'Android productivity game',
-    description:
-      'A gamified focus timer where staying off your phone grows your farm. Built with React Native and Expo — fully offline, no backend required.',
-    tags: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Android'],
-    badge: 'Android',
-    badgeClass: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    github: 'https://github.com/cokee96/focusfarm',
-  },
-  {
-    name: 'bot-recetas',
-    tagline: 'Telegram shopping list + AI recipes',
-    description:
-      'A Telegram bot that manages your shopping list and suggests recipes powered by DeepSeek AI. Includes a companion web interface for tracking ingredients.',
-    tags: ['n8n', 'Telegram Bot API', 'DeepSeek AI', 'JavaScript'],
-    badge: 'Telegram Bot',
-    badgeClass: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-    github: 'https://github.com/cokee96/bot-recetas',
-  },
-];
+import { cv } from '../data/cv';
+
+const badgeColors: Record<string, string> = {
+  'Android':       'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+  'Telegram Bot':  'text-blue-400 bg-blue-500/10 border-blue-500/20',
+  'IaC':           'text-amber-400 bg-amber-500/10 border-amber-500/20',
+};
+
+const projects = cv.projects.map(p => ({
+  ...p,
+  badgeClass: badgeColors[p.badge] ?? 'text-slate-400 bg-slate-500/10 border-slate-500/20',
+}));
 ---
 
 <section id="projects" class="py-14 border-t border-slate-900 scroll-mt-16">
@@ -31,7 +21,7 @@ const projects = [
       <h2 class="text-4xl font-bold tracking-tight">Projects</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map(project => (
         <article class="bg-slate-900/50 border border-slate-800 hover:border-slate-700 rounded-xl p-7 flex flex-col gap-5 transition-all hover:bg-slate-900/80 group">
 

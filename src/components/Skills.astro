@@ -1,13 +1,6 @@
 ---
-const groups = [
-  { label: 'Cloud', skills: ['Azure'] },
-  { label: 'IaC', skills: ['Terraform', 'Ansible', 'AWX'] },
-  { label: 'CI/CD', skills: ['Azure DevOps', 'Jenkins', 'GitHub Actions'] },
-  { label: 'Containers & Orchestration', skills: ['Kubernetes', 'Docker', 'Helm', 'Argo Workflows'] },
-  { label: 'Scripting', skills: ['Python', 'Bash / Shell'] },
-  { label: 'Data', skills: ['Apache NiFi'] },
-  { label: 'Tools', skills: ['Linux', 'Git', 'Rundeck'] },
-];
+import { cv } from '../data/cv';
+const groups = cv.skills;
 ---
 
 <section id="skills" class="py-14 border-t border-slate-900 scroll-mt-16">
@@ -19,11 +12,11 @@ const groups = [
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-      {groups.map(({ label, skills }) => (
+      {groups.map(({ label, items }) => (
         <div>
           <p class="font-mono text-xs text-amber-500/60 uppercase tracking-widest mb-4">{label}</p>
           <div class="flex flex-wrap gap-2">
-            {skills.map(skill => (
+            {items.map(skill => (
               <span class="text-sm px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-600 text-slate-300 rounded-lg transition-colors cursor-default">
                 {skill}
               </span>

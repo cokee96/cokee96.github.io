@@ -1,0 +1,46 @@
+name: Generate CV PDF
+
+on:
+  push:
+    paths:
+      - cv.yaml
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Screenshot CV page as PDF
+        run: |
+          node -e "
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+            await page.goto('file://' + require('path').resolve('dist/index.html'), { waitUntil: 'networkidle' });
+            await page.pdf({ path: 'cv-alvaro-alonso.pdf', format: 'A4', printBackground: true });
+            await browser.close();
+            console.log('PDF generated: cv-alvaro-alonso.pdf');
+          })();
+          "
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: cv-alvaro-alonso.pdf
+          retention-days: 30

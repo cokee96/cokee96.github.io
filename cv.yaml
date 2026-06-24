@@ -1,0 +1,94 @@
+profile:
+  name: "Álvaro Alonso González"
+  role: "DevOps & Cloud Engineer"
+  email: "alvaroalonsogonzalez96@gmail.com"
+  location: "Madrid, Spain"
+  linkedin: "https://www.linkedin.com/in/alvaro-alonso-gonzalez"
+  github: "https://github.com/cokee96"
+  summary: >
+    I build infrastructure that scales — Kubernetes clusters, Terraform modules,
+    and CI/CD pipelines that let teams ship without friction.
+
+experience:
+  - company: "INNOCV [Alkemy]"
+    role: "Cloud & DevOps Engineer"
+    start: "2026-01"
+    end: null
+    tags: [Azure, "Azure DevOps", Kubernetes, Terraform, IaC, CI/CD]
+    bullets:
+      - "Designing and provisioning cloud infrastructure as code with Terraform on Azure."
+      - "Building and maintaining CI/CD pipelines with Azure DevOps."
+      - "Managing Kubernetes cluster deployments and operations."
+
+  - company: "Capgemini"
+    role: "DevOps Engineer"
+    start: "2024-09"
+    end: "2026-01"
+    tags: [Docker, Jenkins, Python, Shell, "Apache NiFi"]
+    bullets:
+      - "Automated application deployments with Docker containers."
+      - "Developed and maintained Jenkins CI/CD pipelines."
+      - "Built data ingestion pipelines with Apache NiFi."
+      - "Wrote Python and Shell scripts to automate infrastructure tasks."
+
+  - company: "HPE"
+    role: "Technical Consultant / DevOps"
+    start: "2021-03"
+    end: "2024-09"
+    tags: [Ansible, AWX, Rundeck, Jenkins, Linux]
+    bullets:
+      - "Automated infrastructure provisioning and configuration with Ansible and AWX."
+      - "Managed and supported Linux systems across multiple client environments."
+      - "Scheduled and automated operational tasks using Rundeck."
+
+skills:
+  - label: "Cloud"
+    items: [Azure]
+  - label: "IaC"
+    items: [Terraform, Ansible, AWX]
+  - label: "CI/CD"
+    items: ["Azure DevOps", Jenkins, "GitHub Actions"]
+  - label: "Containers & Orchestration"
+    items: [Kubernetes, Docker, Helm, "Argo Workflows"]
+  - label: "Scripting"
+    items: [Python, "Bash / Shell"]
+  - label: "Data"
+    items: ["Apache NiFi"]
+  - label: "Tools"
+    items: [Linux, Git, Rundeck]
+
+projects:
+  - name: "FocusFarm"
+    tagline: "Android productivity game"
+    description: >
+      A gamified focus timer where staying off your phone grows your farm.
+      Built with React Native and Expo — fully offline, no backend required.
+    tags: ["React Native", Expo, TypeScript, Zustand, Android]
+    badge: "Android"
+    github: "https://github.com/cokee96/focusfarm"
+
+  - name: "bot-recetas"
+    tagline: "Telegram shopping list + AI recipes"
+    description: >
+      A Telegram bot that manages your shopping list and suggests recipes powered
+      by DeepSeek AI. Includes a companion web interface for tracking ingredients.
+    tags: [n8n, "Telegram Bot API", "DeepSeek AI", JavaScript]
+    badge: "Telegram Bot"
+    github: "https://github.com/cokee96/bot-recetas"
+
+  - name: "terraform-azure-modules"
+    tagline: "Reusable Terraform module library for Azure"
+    description: >
+      A collection of opinionated Terraform modules for Azure (resource-group, vnet,
+      AKS, ACR, Key Vault) with a full AKS-cluster example and GitHub Actions CI.
+    tags: [Terraform, Azure, IaC, "GitHub Actions"]
+    badge: "IaC"
+    github: "https://github.com/cokee96/terraform-azure-modules"
+
+education:
+  - institution: "Universidad Politécnica de Madrid"
+    degree: "MSc Telecommunications Engineering"
+    period: "2019 – 2021"
+  - institution: "Universidad Politécnica de Madrid"
+    degree: "BSc Telecommunications Engineering"
+    period: "2015 – 2019"
