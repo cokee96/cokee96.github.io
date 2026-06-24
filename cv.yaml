@@ -140,6 +140,18 @@ projects:
     badge: "Security"
     github: "https://github.com/cokee96/vault-secrets"
 
+  - name: "backstage-idp"
+    tagline: "Internal Developer Platform with Backstage"
+    description: >
+      Self-hosted Internal Developer Portal built with CNCF Backstage. Provides a
+      unified catalog of all services, GitHub-integrated software templates that
+      scaffold new microservices (repo + k8s manifests + ArgoCD app in one click),
+      and live visibility into Kubernetes pods and ArgoCD sync status. Deployed
+      on Kubernetes via GitOps — PostgreSQL persistence, guest auth for local dev.
+    tags: [Backstage, IDP, Kubernetes, GitOps, ArgoCD, "Developer Experience"]
+    badge: "Platform Engineering"
+    github: "https://github.com/cokee96/backstage-idp"
+
 education:
   - institution: "Universidad Politécnica de Madrid"
     degree: "MSc Telecommunications Engineering"
