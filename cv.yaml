@@ -77,13 +77,44 @@ projects:
     github: "https://github.com/cokee96/bot-recetas"
 
   - name: "terraform-azure-modules"
-    tagline: "Reusable Terraform module library for Azure"
+    tagline: "Production-grade Terraform module library for Azure"
     description: >
-      A collection of opinionated Terraform modules for Azure (resource-group, vnet,
-      AKS, ACR, Key Vault) with a full AKS-cluster example and GitHub Actions CI.
-    tags: [Terraform, Azure, IaC, "GitHub Actions"]
+      17 composable Terraform modules covering the full Azure cloud-native stack:
+      VNet, AKS, ACR, Key Vault, SQL, Redis, Cosmos DB, Service Bus, Event Hub,
+      App Service, Functions, Storage, NSG, Private Endpoints and more.
+      Includes a live/ environment layer (dev/pre/prod), CI/CD pipelines for
+      GitHub Actions, Azure DevOps and Jenkins with plan-before-approve gates,
+      and OIDC authentication — no long-lived secrets.
+    tags: [Terraform, Azure, AKS, IaC, "GitHub Actions", "Azure DevOps", Jenkins]
     badge: "IaC"
     github: "https://github.com/cokee96/terraform-azure-modules"
+
+  - name: "kubernetes-modules"
+    tagline: "Terraform modules and pipelines for Kubernetes & on-premise"
+    description: >
+      14 Terraform modules for Kubernetes resources (Deployment, Service, Ingress,
+      ConfigMap, Secret, HPA, StatefulSet, CronJob, NetworkPolicy, Helm Release…)
+      with full environment parameterisation. Includes Ansible playbooks for
+      on-premise VM deployments and CI/CD pipelines for GitHub Actions, Azure DevOps
+      and Jenkins — both for on-premise Kubernetes clusters (kubeconfig-based) and
+      bare-metal servers via Ansible/SSH.
+    tags: [Kubernetes, Terraform, Ansible, "GitHub Actions", "Azure DevOps", Jenkins, IaC]
+    badge: "IaC"
+    github: "https://github.com/cokee96/kubernetes-modules"
+
+  - name: "observability-stack"
+    tagline: "GitOps observability platform with ArgoCD, Prometheus and Loki"
+    description: >
+      Production-ready observability stack deployed via GitOps: ArgoCD manages itself
+      and all components using the App of Apps pattern. Includes kube-prometheus-stack
+      (Prometheus, Alertmanager, Grafana), Loki for log aggregation, 3 pre-built
+      Grafana dashboards (cluster overview, node exporter, golden signals), and 13
+      alert rules covering pods, nodes, deployments and application SLOs.
+      Parameterised for dev/pre/prod with CI/CD pipelines for GitHub Actions,
+      Azure DevOps and Jenkins.
+    tags: [ArgoCD, Prometheus, Grafana, Loki, Kubernetes, GitOps, Alertmanager, Helm]
+    badge: "GitOps"
+    github: "https://github.com/cokee96/observability-stack"
 
 education:
   - institution: "Universidad Politécnica de Madrid"
