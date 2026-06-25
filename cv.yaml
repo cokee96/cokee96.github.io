@@ -152,6 +152,19 @@ projects:
     badge: "Platform Engineering"
     github: "https://github.com/cokee96/backstage-idp"
 
+  - name: "devsecops-pipeline"
+    tagline: "Shift-left security pipeline with image signing and admission control"
+    description: >
+      End-to-end DevSecOps pipeline that enforces security at every stage:
+      Gitleaks detects leaked secrets before build, Semgrep runs SAST on the source,
+      Trivy scans the container image for CVEs (fails on CRITICAL), Cosign signs
+      the image keylessly via Sigstore/Rekor, and Kyverno policies on the cluster
+      reject any Pod running an unsigned image or missing resource limits.
+      Zero secrets stored — signing uses GitHub Actions OIDC with ephemeral keys.
+    tags: [DevSecOps, "GitHub Actions", Trivy, Cosign, Kyverno, Sigstore, "Supply Chain Security"]
+    badge: "Security"
+    github: "https://github.com/cokee96/devsecops-pipeline"
+
 education:
   - institution: "Universidad Politécnica de Madrid"
     degree: "MSc Telecommunications Engineering"
